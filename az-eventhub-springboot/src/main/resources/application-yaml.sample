@@ -1,0 +1,30 @@
+server:
+  port: 8081         
+spring:
+   cloud:
+     azure:
+       eventhub:
+         connection-string: [Your Event Hub Connection String Here]
+         checkpoint-storage-account: [Your Storage Account Name Here]
+         checkpoint-access-key: [Your Blob Container Key Here]
+         checkpoint-container: [Your Blob Container Name Here]
+         
+     stream:
+       bindings:
+         consume-in-0:
+           destination: [Your Event Hub Name Here]
+           group: $Default
+         supply-out-0:
+           destination: [Your Event Hub Name Here]
+
+       eventhub:
+         bindings:
+           consume-in-0:
+             consumer:
+               checkpoint-mode: MANUAL
+       function:
+         definition: consume;supply;
+         #definition: consume;
+       poller:
+         initial-delay: 0
+         fixed-delay: 1000
