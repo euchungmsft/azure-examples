@@ -18,8 +18,8 @@ public class Sender {
 
 	int count = 10000;
 
-	String connectionString = "Endpoint=sb://eh-krc-002.servicebus.windows.net/;SharedAccessKeyName=tester01;SharedAccessKey=J2CvWV3wF7NyswSppmxhHIje1+ppZrUPckGJzwPaYZY=;EntityPath=eh001";
-	String eventHubName = "eh001";
+	String connectionString = "";
+	String eventHubName = "";
 
 	String path = "data/data2.json";
 
