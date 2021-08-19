@@ -1,5 +1,7 @@
 plugins {
-	id 'org.springframework.boot' version '2.6.0-SNAPSHOT'
+//	id 'org.springframework.boot' version '2.6.0-SNAPSHOT'
+//	id 'org.springframework.boot' version '2.2.13.RELEASE'
+	id 'org.springframework.boot' version '2.5.0'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
@@ -14,15 +16,29 @@ repositories {
 	maven { url 'https://repo.spring.io/snapshot' }
 }
 
+configurations {
+    testRuntime
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	
 	// https://mvnrepository.com/artifact/com.azure.spring/azure-spring-cloud-stream-binder-eventhubs
-	implementation group: 'com.azure.spring', name: 'azure-spring-cloud-stream-binder-eventhubs', version: '2.7.0'
+//	implementation group: 'com.azure.spring', name: 'azure-spring-cloud-stream-binder-eventhubs', version: '2.7.0'
+	implementation group: 'com.azure.spring', name: 'azure-spring-cloud-stream-binder-eventhubs', version: '2.6.0'
+	
+	// https://mvnrepository.com/artifact/com.google.code.gson/gson
+	implementation 'com.google.code.gson:gson:2.8.7'
 }
 
 test {
 	useJUnitPlatform()
 }
+/*
+task copyRuntimeLibs(type: Copy) {
+	into "ext"
+	from configurations.runtime
+}
+*/

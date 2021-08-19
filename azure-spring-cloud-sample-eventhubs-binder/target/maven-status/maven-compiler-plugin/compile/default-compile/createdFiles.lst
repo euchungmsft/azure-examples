@@ -1,0 +1,5 @@
+com/azure/spring/sample/eventhubs/binder/EventProducerConfiguration.class
+com/azure/spring/sample/eventhubs/binder/ManualEventProducerConfiguration.class
+com/azure/spring/sample/eventhubs/binder/ReactiveEventProducerController.class
+com/azure/spring/sample/eventhubs/binder/ImperativeEventProducerController.class
+com/azure/spring/sample/eventhubs/binder/EventHubBinderApplication.class
